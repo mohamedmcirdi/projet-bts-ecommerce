@@ -41,3 +41,6 @@
 
 </body>
 </html>
+<?php
+header("Location: ../confirmation.php");
+exit;

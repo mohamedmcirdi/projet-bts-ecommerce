@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Commande – VoyageHub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>VoyageHub</h1>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="catalogue.html">Destinations</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Finaliser la commande</h2>
+
+    <form action="php/traitement.php" method="post">
+        <label>
+            Nom :
+            <input type="text" name="nom" required>
+        </label>
+        <br><br>
+
+        <label>
+            Email :
+            <input type="email" name="email" required>
+        </label>
+        <br><br>
+
+        <label>
+            Adresse :
+            <input type="text" name="adresse" required>
+        </label>
+        <br><br>
+
+        <button type="submit">Confirmer la commande</button>
+    </form>
+</main>
+
+<footer>
+    <p>© 2026 – VoyageHub – Tous droits réservés</p>
+    <a href="mentions.html">Mentions légales</a>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
