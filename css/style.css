@@ -1,36 +1,349 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+/* =========================
+   RESET & VARIABLES
+========================= */
+:root {
+    --primary: #0d6efd;
+    --primary-dark: #084298;
+    --bg: #f4f6f8;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --card: #ffffff;
+    --radius: 14px;
+    --shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================
+   HEADER / NAV
+========================= */
 header {
-    background: #0d6efd;
-    color: white;
-    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--primary);
+    color: #fff;
+    padding: 18px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
 }
 
 nav a {
-    color: white;
-    margin-right: 15px;
-    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 500;
+    opacity: 0.95;
 }
 
+nav a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    min-height: 85vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("../images/hero.jpg") center / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    color: #fff;
+}
+
+.hero h2 {
+    font-size: 54px;
+    max-width: 900px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 720px;
+    margin-bottom: 40px;
+    opacity: 0.95;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    padding: 16px 36px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* =========================
+   MAIN
+========================= */
 main {
-    padding: 20px;
+    max-width: 1280px;
+    margin: 80px auto;
+    padding: 0 24px;
 }
 
-button {
-    padding: 10px 15px;
-    background: #0d6efd;
-    color: white;
+/* =========================
+   SECTIONS
+========================= */
+.section {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 60px;
+    margin-bottom: 60px;
+    box-shadow: var(--shadow);
+}
+
+.section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* =========================
+   AVANTAGES (HOME)
+========================= */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature {
+    text-align: center;
+    padding: 30px;
+}
+
+.feature h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: var(--muted);
+}
+
+/* =========================
+   CATALOGUE
+========================= */
+.catalogue {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.card {
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 24px;
+}
+
+.card-content h3 {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.card-content p {
+    color: var(--muted);
+    margin-bottom: 18px;
+}
+
+/* =========================
+   PRODUCT PAGE
+========================= */
+.product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.product img {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.product-details h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.product-details p {
+    color: var(--muted);
+}
+
+.product-details ul {
+    margin: 25px 0;
+    padding-left: 20px;
+}
+
+.product-details li {
+    margin-bottom: 8px;
+}
+
+.price {
+    font-size: 30px;
+    font-weight: 800;
+    margin: 25px 0;
+}
+
+/* =========================
+   PANIER
+========================= */
+.cart {
+    background: var(--card);
+    padding: 50px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: 500;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+/* =========================
+   FORMS
+========================= */
+form {
+    background: var(--card);
+    padding: 50px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 22px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 15px;
+}
+
+form button {
+    width: 100%;
+    background: var(--primary);
+    color: #fff;
     border: none;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
     cursor: pointer;
 }
 
+form button:hover {
+    background: var(--primary-dark);
+}
+
+/* =========================
+   FOOTER
+========================= */
 footer {
-    background: #eee;
+    background: #e9ecef;
     text-align: center;
-    padding: 10px;
-    margin-top: 40px;
+    padding: 40px 20px;
+    margin-top: 80px;
+    font-size: 14px;
+}
+
+footer a {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+    header {
+        padding: 16px 24px;
+    }
+
+    .hero h2 {
+        font-size: 38px;
+    }
+
+    .product {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 40px 24px;
+    }
 }
