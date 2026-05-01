@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoyageHub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #1a73e8;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 15px;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* HERO */
+        .hero {
+            background-color: #1a3c5e;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            margin-bottom: 28px;
+            color: #cce0ff;
+        }
+
+        .hero a {
+            background-color: #1a73e8;
+            color: white;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        .hero a:hover {
+            background-color: #1558b0;
+        }
+
+        /* AVANTAGES */
+        .avantages {
+            padding: 50px 32px;
+            background-color: white;
+            text-align: center;
+        }
+
+        .avantages h2 {
+            font-size: 24px;
+            margin-bottom: 32px;
+            color: #1a3c5e;
+        }
+
+        .avantages-grid {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .avantage-card {
+            background-color: #f0f4ff;
+            border-radius: 8px;
+            padding: 24px;
+            width: 220px;
+            border: 1px solid #d0daf0;
+        }
+
+        .avantage-card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #1a3c5e;
+        }
+
+        .avantage-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* RECHERCHE */
+        .recherche {
+            background-color: #eaf2ff;
+            padding: 40px 32px;
+            text-align: center;
+        }
+
+        .recherche h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #1a3c5e;
+        }
+
+        .recherche input {
+            padding: 10px 16px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            width: 260px;
+            margin-right: 10px;
+        }
+
+        .recherche button {
+            padding: 10px 22px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .recherche button:hover {
+            background-color: #1558b0;
+        }
+
+        #resultat-recherche {
+            margin-top: 14px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #1a3c5e;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+        }
+
+        footer a {
+            color: #7ab3f5;
+            text-decoration: none;
+            margin-left: 8px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">VoyageHub</div>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="catalogue.php">Destinations</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Partez à la découverte du monde</h1>
+    <p>Voyages d'exception aux meilleurs prix, partout dans le monde.</p>
+    <a href="catalogue.php">Voir les destinations</a>
+</section>
+
+<!-- RECHERCHE -->
+<section class="recherche">
+    <h2>Rechercher une destination</h2>
+    <input type="text" id="inputDestination" placeholder="Ex : Paris, Tokyo, New York…" />
+    <button onclick="rechercherDestination()">Rechercher</button>
+    <p id="resultat-recherche"></p>
+</section>
+
+<!-- AVANTAGES -->
+<section class="avantages">
+    <h2>Pourquoi choisir VoyageHub ?</h2>
+    <div class="avantages-grid">
+        <div class="avantage-card">
+            <h3>💰 Meilleurs prix</h3>
+            <p>Des offres au meilleur tarif, garanties sans frais cachés.</p>
+        </div>
+        <div class="avantage-card">
+            <h3>🔒 Paiement sécurisé</h3>
+            <p>Vos paiements sont protégés et 100 % sécurisés.</p>
+        </div>
+        <div class="avantage-card">
+            <h3>📞 Service client 7j/7</h3>
+            <p>Notre équipe est disponible tous les jours pour vous aider.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 – VoyageHub – Tous droits réservés
+        <a href="mentions.html">Mentions légales</a>
+    </p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+    function rechercherDestination() {
+        var destination = document.getElementById('inputDestination').value;
+        var resultat = document.getElementById('resultat-recherche');
+
+        if (destination === '') {
+            resultat.textContent = 'Veuillez entrer une destination.';
+        } else {
+            resultat.textContent = 'Vous recherchez : ' + destination + '. Redirection vers le catalogue…';
+            setTimeout(function() {
+                window.location.href = 'catalogue.php';
+            }, 1500);
+        }
+    }
+</script>
+
+</body>
+</html>

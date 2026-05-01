@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos – VoyageHub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #1a73e8;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 15px;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* HERO PETIT */
+        .hero-small {
+            background-color: #1a3c5e;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero-small h1 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .hero-small p {
+            font-size: 15px;
+            color: #cce0ff;
+        }
+
+        /* CONTENU */
+        .contenu {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .bloc {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        .bloc h2 {
+            font-size: 20px;
+            color: #1a3c5e;
+            margin-bottom: 14px;
+        }
+
+        .bloc p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        /* CHIFFRES CLÉS */
+        .chiffres {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 10px;
+        }
+
+        .chiffre-bloc {
+            text-align: center;
+            background-color: #f0f4ff;
+            border-radius: 8px;
+            padding: 20px 28px;
+            border: 1px solid #d0daf0;
+            min-width: 140px;
+        }
+
+        .chiffre-bloc strong {
+            display: block;
+            font-size: 28px;
+            color: #1a73e8;
+            margin-bottom: 6px;
+        }
+
+        .chiffre-bloc span {
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* ÉQUIPE */
+        .equipe {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .membre {
+            background-color: #f0f4ff;
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #d0daf0;
+            flex: 1;
+            min-width: 180px;
+            text-align: center;
+        }
+
+        .membre .avatar {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .membre h3 {
+            font-size: 15px;
+            color: #1a3c5e;
+            margin-bottom: 4px;
+        }
+
+        .membre p {
+            font-size: 13px;
+            color: #888;
+            margin: 0;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #1a3c5e;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #7ab3f5;
+            text-decoration: none;
+            margin-left: 8px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">VoyageHub</div>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="catalogue.html">Destinations</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero-small">
+    <h1>À propos de VoyageHub</h1>
+    <p>Qui sommes-nous et pourquoi nous choisir ?</p>
+</section>
+
+<!-- CONTENU -->
+<div class="contenu">
+
+    <!-- PRÉSENTATION -->
+    <div class="bloc">
+        <h2>Notre histoire</h2>
+        <p>
+            VoyageHub est une agence de voyages en ligne fondée en 2020, avec une mission simple :
+            rendre les voyages d'exception accessibles à tous.
+        </p>
+        <p>
+            Nous sélectionnons pour vous les meilleures destinations du monde,
+            avec des offres tout compris au meilleur prix.
+            Chaque séjour est préparé avec soin pour vous offrir une expérience inoubliable.
+        </p>
+    </div>
+
+    <!-- CHIFFRES CLÉS -->
+    <div class="bloc">
+        <h2>Nos chiffres clés</h2>
+        <div class="chiffres">
+            <div class="chiffre-bloc">
+                <strong>+5 000</strong>
+                <span>Clients satisfaits</span>
+            </div>
+            <div class="chiffre-bloc">
+                <strong>+50</strong>
+                <span>Destinations</span>
+            </div>
+            <div class="chiffre-bloc">
+                <strong>4 ans</strong>
+                <span>D'expérience</span>
+            </div>
+            <div class="chiffre-bloc">
+                <strong>7j/7</strong>
+                <span>Service client</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ÉQUIPE -->
+    <div class="bloc">
+        <h2>Notre équipe</h2>
+        <div class="equipe">
+            <div class="membre">
+                <div class="avatar">👨‍💼</div>
+                <h3>Thomas Dupont</h3>
+                <p>Fondateur & CEO</p>
+            </div>
+            <div class="membre">
+                <div class="avatar">👩‍💼</div>
+                <h3>Sophie Martin</h3>
+                <p>Responsable des destinations</p>
+            </div>
+            <div class="membre">
+                <div class="avatar">👨‍💻</div>
+                <h3>Lucas Bernard</h3>
+                <p>Développeur web</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- VALEURS -->
+    <div class="bloc">
+        <h2>Nos valeurs</h2>
+        <p>✅ Transparence sur les prix, sans frais cachés.</p>
+        <p>✅ Qualité des hébergements et des transports sélectionnés.</p>
+        <p>✅ Respect de l'environnement avec des voyages responsables.</p>
+        <p>✅ Satisfaction client au cœur de chaque décision.</p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 – VoyageHub – Tous droits réservés
+        <a href="mentions.html">Mentions légales</a>
+    </p>
+</footer>
+
+</body>
+</html>

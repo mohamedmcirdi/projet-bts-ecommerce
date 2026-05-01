@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ – VoyageHub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #1a73e8;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 15px;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero-small {
+            background-color: #1a3c5e;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero-small h1 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .hero-small p {
+            font-size: 15px;
+            color: #cce0ff;
+        }
+
+        .contenu {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px 60px;
+        }
+
+        /* UNE QUESTION FAQ */
+        .faq-item {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            margin-bottom: 12px;
+        }
+
+        /* LE BOUTON QU'ON CLIQUE */
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 20px 24px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #1a3c5e;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .faq-question:hover {
+            background-color: #f0f4ff;
+            border-radius: 10px;
+        }
+
+        /* LA RÉPONSE CACHÉE PAR DÉFAUT */
+        .faq-reponse {
+            display: none;
+            padding: 0 24px 20px;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.7;
+            border-top: 1px solid #eee;
+        }
+
+        footer {
+            background-color: #1a3c5e;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #7ab3f5;
+            text-decoration: none;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">VoyageHub</div>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="catalogue.html">Destinations</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="hero-small">
+    <h1>Questions fréquentes</h1>
+    <p>Toutes les réponses à vos questions</p>
+</section>
+
+<div class="contenu">
+
+    <div class="faq-item">
+        <button class="faq-question" onclick="ouvrirFermer(this)">
+            Les paiements sont-ils sécurisés ? <span>+</span>
+        </button>
+        <div class="faq-reponse">
+            Oui, toutes les transactions sont sécurisées grâce au protocole SSL.
+            Vos données bancaires sont protégées à chaque étape du paiement.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question" onclick="ouvrirFermer(this)">
+            Puis-je annuler une commande ? <span>+</span>
+        </button>
+        <div class="faq-reponse">
+            Oui, vous pouvez annuler votre commande dans les 48 heures suivant la réservation sans frais.
+            Passé ce délai, des frais d'annulation peuvent s'appliquer.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question" onclick="ouvrirFermer(this)">
+            Le service client est-il disponible 7j/7 ? <span>+</span>
+        </button>
+        <div class="faq-reponse">
+            Oui, notre équipe est disponible tous les jours de 8h à 20h.
+            Contactez-nous par email à contact@voyagehub.fr ou au 01 23 45 67 89.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question" onclick="ouvrirFermer(this)">
+            Le transport est-il inclus dans le prix ? <span>+</span>
+        </button>
+        <div class="faq-reponse">
+            Oui, tous nos séjours incluent le transport aller-retour depuis Paris.
+            Le prix affiché est le prix total, sans frais cachés.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question" onclick="ouvrirFermer(this)">
+            Comment recevoir ma confirmation de réservation ? <span>+</span>
+        </button>
+        <div class="faq-reponse">
+            Un email de confirmation est envoyé automatiquement après votre commande,
+            à l'adresse email que vous avez renseignée.
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 – VoyageHub – Tous droits réservés
+        <a href="mentions.html">Mentions légales</a>
+    </p>
+</footer>
+
+<script>
+    // Quand on clique sur une question, on affiche ou cache la réponse
+    function ouvrirFermer(bouton) {
+
+        // On récupère la réponse juste en dessous du bouton cliqué
+        var reponse = bouton.nextElementSibling;
+
+        // Si la réponse est visible, on la cache
+        if (reponse.style.display === 'block') {
+            reponse.style.display = 'none';
+
+        // Sinon on l'affiche
+        } else {
+            reponse.style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>

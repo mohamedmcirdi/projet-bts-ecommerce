@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier – VoyageHub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #1a73e8;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 15px;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* PANIER */
+        .panier {
+            max-width: 700px;
+            margin: 40px auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            padding: 32px;
+        }
+
+        .panier h2 {
+            font-size: 24px;
+            color: #1a3c5e;
+            margin-bottom: 28px;
+        }
+
+        /* LIGNE PRODUIT */
+        .panier-ligne {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .panier-ligne h3 {
+            font-size: 16px;
+            color: #1a3c5e;
+            margin-bottom: 4px;
+        }
+
+        .panier-ligne p {
+            font-size: 13px;
+            color: #888;
+        }
+
+        .panier-ligne .prix {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1a73e8;
+        }
+
+        /* CHOIX NOMBRE DE PERSONNES */
+        .nb-personnes {
+            margin: 20px 0;
+        }
+
+        .nb-personnes label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .nb-personnes select {
+            padding: 8px 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        /* TOTAL */
+        .panier-total {
+            margin-top: 24px;
+            text-align: right;
+        }
+
+        .panier-total p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1a3c5e;
+        }
+
+        /* BOUTON */
+        .panier-total a {
+            display: inline-block;
+            margin-top: 16px;
+            background-color: #1a73e8;
+            color: white;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        .panier-total a:hover {
+            background-color: #1558b0;
+        }
+
+        /* PANIER VIDE */
+        .panier-vide {
+            text-align: center;
+            padding: 40px 0;
+            color: #888;
+            font-size: 15px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #1a3c5e;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #7ab3f5;
+            text-decoration: none;
+            margin-left: 8px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">VoyageHub</div>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="catalogue.html">Destinations</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- PANIER -->
+<section class="panier">
+    <h2>Votre panier</h2>
+
+    <!-- LIGNE PRODUIT -->
+    <div class="panier-ligne">
+        <div>
+            <h3>Voyage à Paris</h3>
+            <p>5 jours – Hôtel 4 étoiles – Transport inclus</p>
+        </div>
+        <div class="prix">899 €</div>
+    </div>
+
+    <!-- CHOIX NOMBRE DE PERSONNES (JavaScript) -->
+    <div class="nb-personnes">
+        <label for="nbPersonnes">Nombre de personnes :</label>
+        <select id="nbPersonnes" onchange="calculerTotal()">
+            <option value="1">1 personne</option>
+            <option value="2">2 personnes</option>
+            <option value="3">3 personnes</option>
+            <option value="4">4 personnes</option>
+        </select>
+    </div>
+
+    <!-- TOTAL -->
+    <div class="panier-total">
+        <p id="totalPrix">Total : 899 €</p>
+        <a href="commande.php">Passer la commande</a>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 – VoyageHub – Tous droits réservés
+        <a href="mentions.html">Mentions légales</a>
+    </p>
+</footer>
+
+<!-- JAVASCRIPT : recalcule le total selon le nombre de personnes -->
+<script>
+    function calculerTotal() {
+        var nbPersonnes = parseInt(document.getElementById('nbPersonnes').value);
+        var prixParPersonne = 899;
+        var total = nbPersonnes * prixParPersonne;
+        document.getElementById('totalPrix').textContent = 'Total : ' + total + ' €';
+    }
+</script>
+
+</body>
+</html>
