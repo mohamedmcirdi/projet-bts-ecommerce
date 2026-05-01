@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voyage à Paris – VoyageHub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #1a73e8;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 15px;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* CONTENU PRODUIT */
+        .produit {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .produit img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .produit-body {
+            padding: 32px;
+        }
+
+        .produit-body h2 {
+            font-size: 26px;
+            color: #1a3c5e;
+            margin-bottom: 14px;
+        }
+
+        .produit-body p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        /* INFOS */
+        .infos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .info-bloc {
+            background-color: #f0f4ff;
+            border-radius: 8px;
+            padding: 14px 20px;
+            border: 1px solid #d0daf0;
+            min-width: 150px;
+        }
+
+        .info-bloc span {
+            display: block;
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 4px;
+        }
+
+        .info-bloc strong {
+            font-size: 15px;
+            color: #1a3c5e;
+        }
+
+        /* CHOIX NOMBRE DE PERSONNES */
+        .choix-personnes {
+            margin-bottom: 24px;
+        }
+
+        .choix-personnes label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .choix-personnes select {
+            padding: 9px 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        /* PRIX TOTAL */
+        #prixTotal {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1a73e8;
+            margin-bottom: 24px;
+        }
+
+        /* BOUTON */
+        .btn-panier {
+            display: inline-block;
+            background-color: #1a73e8;
+            color: white;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        .btn-panier:hover {
+            background-color: #1558b0;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #1a3c5e;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #7ab3f5;
+            text-decoration: none;
+            margin-left: 8px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">VoyageHub</div>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="catalogue.html">Destinations</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- PRODUIT -->
+<section class="produit">
+    <img src="images/paris.jpg" alt="Paris">
+    <div class="produit-body">
+
+        <h2>Voyage à Paris</h2>
+        <p>
+            Profitez d'un séjour inoubliable à Paris, la capitale française.
+            Découvrez la Tour Eiffel, le Louvre et les plus beaux quartiers de la ville.
+        </p>
+
+        <!-- INFOS -->
+        <div class="infos">
+            <div class="info-bloc">
+                <span>Durée</span>
+                <strong>5 jours</strong>
+            </div>
+            <div class="info-bloc">
+                <span>Hôtel</span>
+                <strong>4 étoiles</strong>
+            </div>
+            <div class="info-bloc">
+                <span>Transport</span>
+                <strong>Inclus</strong>
+            </div>
+            <div class="info-bloc">
+                <span>Prix par personne</span>
+                <strong>899 €</strong>
+            </div>
+        </div>
+
+        <!-- CHOIX NOMBRE DE PERSONNES (JavaScript) -->
+        <div class="choix-personnes">
+            <label for="nbPersonnes">Nombre de personnes :</label>
+            <select id="nbPersonnes" onchange="calculerPrix()">
+                <option value="1">1 personne</option>
+                <option value="2">2 personnes</option>
+                <option value="3">3 personnes</option>
+                <option value="4">4 personnes</option>
+            </select>
+        </div>
+
+        <!-- PRIX TOTAL MIS À JOUR EN JS -->
+        <p id="prixTotal">Total : 899 €</p>
+
+        <a href="panier.html" class="btn-panier">Ajouter au panier</a>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 – VoyageHub – Tous droits réservés
+        <a href="mentions.html">Mentions légales</a>
+    </p>
+</footer>
+
+<!-- JAVASCRIPT : calcul du prix selon le nombre de personnes -->
+<script>
+    function calculerPrix() {
+        var nbPersonnes = parseInt(document.getElementById('nbPersonnes').value);
+        var prixParPersonne = 899;
+        var total = nbPersonnes * prixParPersonne;
+        document.getElementById('prixTotal').textContent = 'Total : ' + total + ' €';
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue – VoyageHub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #1a73e8;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 15px;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        .titre-page {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        .titre-page h2 {
+            font-size: 28px;
+            color: #1a3c5e;
+            margin-bottom: 8px;
+        }
+
+        .titre-page p {
+            font-size: 15px;
+            color: #666;
+        }
+
+        .filtre {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .filtre label {
+            font-size: 14px;
+            margin-right: 8px;
+            color: #333;
+        }
+
+        .filtre select {
+            padding: 8px 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+            padding: 24px 32px 48px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            width: 280px;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-body {
+            padding: 16px;
+        }
+
+        .card-body h3 {
+            font-size: 18px;
+            color: #1a3c5e;
+            margin-bottom: 6px;
+        }
+
+        .card-body p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        .card-body .prix {
+            font-size: 15px;
+            font-weight: bold;
+            color: #1a73e8;
+            margin-bottom: 14px;
+        }
+
+        .card-body a {
+            display: inline-block;
+            background-color: #1a73e8;
+            color: white;
+            text-decoration: none;
+            padding: 9px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .card-body a:hover {
+            background-color: #1558b0;
+        }
+
+        footer {
+            background-color: #1a3c5e;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+        }
+
+        footer a {
+            color: #7ab3f5;
+            text-decoration: none;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">VoyageHub</div>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="catalogue.html">Destinations</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="titre-page">
+    <h2>Nos destinations</h2>
+    <p>Découvrez toutes nos offres de voyage</p>
+</section>
+
+<div class="filtre">
+    <label for="filtreBudget">Filtrer par budget :</label>
+    <select id="filtreBudget" onchange="filtrerDestinations()">
+        <option value="tous">Tous les budgets</option>
+        <option value="1000">Moins de 1 000 €</option>
+        <option value="1500">Moins de 1 500 €</option>
+        <option value="2000">Moins de 2 000 €</option>
+    </select>
+</div>
+
+<section class="cards" id="listeCartes">
+
+    <div class="card" data-prix="899">
+        <img src="images/paris.jpg" alt="Paris">
+        <div class="card-body">
+            <h3>Paris</h3>
+            <p>La ville lumière – 5 jours</p>
+            <p class="prix">À partir de 899 €</p>
+            <a href="produit.html">Voir l'offre</a>
+        </div>
+    </div>
+
+    <div class="card" data-prix="1299">
+        <img src="images/newyork.jpg" alt="New York">
+        <div class="card-body">
+            <h3>New York</h3>
+            <p>La ville qui ne dort jamais – 7 jours</p>
+            <p class="prix">À partir de 1 299 €</p>
+            <a href="produit.html">Voir l'offre</a>
+        </div>
+    </div>
+
+    <div class="card" data-prix="1799">
+        <img src="images/tokyo.jpg" alt="Tokyo">
+        <div class="card-body">
+            <h3>Tokyo</h3>
+            <p>Tradition et modernité – 10 jours</p>
+            <p class="prix">À partir de 1 799 €</p>
+            <a href="produit.html">Voir l'offre</a>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 – VoyageHub – Tous droits réservés
+        <a href="mentions.html">Mentions légales</a>
+    </p>
+</footer>
+
+<script>
+    function filtrerDestinations() {
+        var budget = document.getElementById('filtreBudget').value;
+        var cartes = document.querySelectorAll('.card');
+
+        cartes.forEach(function(carte) {
+            var prix = parseInt(carte.getAttribute('data-prix'));
+
+            if (budget === 'tous') {
+                carte.style.display = 'block';
+            } else if (prix <= parseInt(budget)) {
+                carte.style.display = 'block';
+            } else {
+                carte.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
